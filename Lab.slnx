@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ConsoleApp1/ConsoleApp1.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ConsoleApp1Tests/ConsoleApp1Tests.csproj" />
+  </Folder>
+  <Folder Name="/Элементы решения/">
+    <File Path="README.md" />
+  </Folder>
+</Solution>
