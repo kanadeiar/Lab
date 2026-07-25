@@ -9,8 +9,14 @@
 
   <ItemGroup>
     <Compile Include="..\..\shared\Console\**\*.*">
-      <Link>common\%(RecursiveDir)%(FileName)%(Extension)</Link>
+      <Link>Common\%(RecursiveDir)%(FileName)%(Extension)</Link>
     </Compile>
   </ItemGroup>
-	
+
+  <ItemGroup>
+    <Compile Include="..\..\shared\Functionals\**\*.*">
+      <Link>Common\Functionals\%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </Compile>
+  </ItemGroup>
+
 </Project>
