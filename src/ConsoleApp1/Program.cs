@@ -1,7 +1,17 @@
-﻿ConsoleHelper.PrintHeader("Лаборатория", "Опытное приложение");
+﻿using ConsoleApp1.InventoryModule;
 
-var name = ConsoleHelper.ReadLineFromConsole("Введите свое имя");
+ConsoleHelper.PrintHeader("Лаборатория", "Опытное приложение");
 
-ConsoleHelper.PrintLine($"Привет, {name}!");
+var name = ConsoleHelper.ReadLineFromConsole("Введите название") ?? "";
+var count = ConsoleHelper.ReadNumberFromConsole<int>("Введите количество");
+
+var inventory = new Inventory(name, count);
+
+ConsoleHelper.PrintLine($"Название и количество: {inventory}");
+ConsoleHelper.Pause();
+
+var updated = inventory.Rename("name").SetQuantity(1);
+
+ConsoleHelper.PrintLine($"Обновлено: {updated}");
 
 ConsoleHelper.PrintFooter();
