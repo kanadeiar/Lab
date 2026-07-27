@@ -1,9 +1,11 @@
 <Solution>
   <Folder Name="/src/">
     <Project Path="src/ConsoleApp1/ConsoleApp1.csproj" />
+    <Project Path="src/WpfApp1/WpfApp1.csproj" Id="9e481780-d240-4237-9c05-1aee91f4ebc3" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/ConsoleApp1Tests/ConsoleApp1Tests.csproj" />
+    <Project Path="tests/WpfApp1Tests/WpfApp1Tests.csproj" Id="38423d3e-bc3d-4daa-89ec-3889febe1f9a" />
   </Folder>
   <Folder Name="/Элементы решения/">
     <File Path="README.md" />

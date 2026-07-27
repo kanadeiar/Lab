@@ -1,6 +1,6 @@
 ﻿using Kanadeiar.Common.Tests;
 
-namespace ConsoleApp1Tests;
+namespace WpfApp1Tests;
 
 public class SampleTests
 {
