@@ -1,14 +1,25 @@
-﻿using System.Configuration;
-using System.Data;
+﻿using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
+using WpfApp1.ViewModels;
 
-namespace WpfApp1
+namespace WpfApp1;
+
+public partial class App : Application
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App : Application
+    public static IServiceProvider Provider => field ??= getServices()
+    .BuildServiceProvider();
+
+    private static IServiceCollection getServices()
     {
+        var services = new ServiceCollection();
+        initServices(services);
+        return services;
     }
 
+    private static void initServices(IServiceCollection services)
+    {
+        services.AddScoped<MainWindowViewModel>();
+
+
+    }
 }
