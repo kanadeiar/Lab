@@ -29,7 +29,12 @@
             </StatusBarItem>
         </StatusBar>
         <Grid Margin="4">
-
+            <StackPanel>
+                <TextBlock Text="Имя:"/>
+                <TextBox Text="{Binding Name}"/>
+                <Button
+                    Command="{Binding HelloCommand}">Привет</Button>
+            </StackPanel>
         </Grid>
     </DockPanel>
 </Window>

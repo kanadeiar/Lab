@@ -12,6 +12,20 @@ public class MainWindowViewModel : Base.ViewModelBase
         init => Set(ref field, value);
     } = "Опытное приложение";
 
+    public string Name
+    {
+        get;
+        init => Set(ref field, value);
+    } = string.Empty;
+
+    public ICommand HelloCommand => field ??=
+        new LambdaCommand(OnHelloCommandExecuted);
+    private void OnHelloCommandExecuted(object? p)
+    {
+        var message = $"Привет, {Name}!";
+        MessageBox.Show(message, "Результат");
+    }
+
     /// <summary>
     /// Закрыть приложение
     /// </summary>
