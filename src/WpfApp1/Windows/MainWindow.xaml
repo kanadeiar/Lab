@@ -5,12 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Height="400" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip"
+        Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip"
         DataContext="{Binding MainWindowViewModel, Source={StaticResource Locator}}"
         Title="{Binding Title}">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Меню">
+                <MenuItem Header="Новый файл" Cursor="Hand"
+                          Command="{Binding NewFileCommand}"/>
+                <MenuItem Header="Открыть файл" Cursor="Hand"
+                          Command="{Binding OpenFileCommand}"/>
+                <MenuItem Header="Сохранить файл" Cursor="Hand"
+                          Command="{Binding SaveFileCommand}"/>
                 <Separator/>
                 <MenuItem Header="Выход" Cursor="Hand"
                           Command="{Binding CloseAppCommand}"/>
@@ -29,12 +35,7 @@
             </StatusBarItem>
         </StatusBar>
         <Grid Margin="4">
-            <StackPanel>
-                <TextBlock Text="Имя:"/>
-                <TextBox Text="{Binding Name}"/>
-                <Button
-                    Command="{Binding HelloCommand}">Привет</Button>
-            </StackPanel>
+            <TextBox Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
     </DockPanel>
 </Window>

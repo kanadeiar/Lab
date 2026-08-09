@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using Microsoft.Win32;
+using System.IO;
+using System.Windows;
 using System.Windows.Input;
 using WpfApp1.Commands;
 
@@ -10,20 +12,48 @@ public class MainWindowViewModel : Base.ViewModelBase
     {
         get;
         init => Set(ref field, value);
-    } = "Опытное приложение";
+    } = "Опытный текстовый редактор";
 
-    public string Name
+    public string Text
     {
         get;
-        init => Set(ref field, value);
+        set => Set(ref field, value);
     } = string.Empty;
 
-    public ICommand HelloCommand => field ??=
-        new LambdaCommand(OnHelloCommandExecuted);
-    private void OnHelloCommandExecuted(object? p)
+    public ICommand NewFileCommand => field ??=
+    new LambdaCommand(OnNewFileCommandExecuted);
+    private void OnNewFileCommandExecuted(object? p)
     {
-        var message = $"Привет, {Name}!";
-        MessageBox.Show(message, "Результат");
+        Text = string.Empty;
+    }
+
+    public ICommand OpenFileCommand => field ??=
+        new LambdaCommand(OnOpenFileCommandExecuted);
+    private void OnOpenFileCommandExecuted(object? p)
+    {
+        var dialog = new OpenFileDialog();
+        var result = dialog.ShowDialog();
+        if (result == true) 
+        {
+            if (File.Exists(dialog.FileName)) 
+            {
+                var text = File.ReadAllText(dialog.FileName);
+                Text = text;
+            }
+        }
+    }
+
+    public ICommand SaveFileCommand => field ??=
+    new LambdaCommand(OnSaveFileCommandExecuted);
+    private void OnSaveFileCommandExecuted(object? p)
+    {
+        var dialog = new SaveFileDialog();
+        var result = dialog.ShowDialog();
+        if (result == true)
+        {
+            var text = Text;
+            File.WriteAllText(dialog.FileName, text);
+        }
     }
 
     /// <summary>
