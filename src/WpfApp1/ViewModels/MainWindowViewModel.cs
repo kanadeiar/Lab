@@ -12,49 +12,7 @@ public class MainWindowViewModel : Base.ViewModelBase
     {
         get;
         init => Set(ref field, value);
-    } = "Опытный текстовый редактор";
-
-    public string Text
-    {
-        get;
-        set => Set(ref field, value);
-    } = string.Empty;
-
-    public ICommand NewFileCommand => field ??=
-    new LambdaCommand(OnNewFileCommandExecuted);
-    private void OnNewFileCommandExecuted(object? p)
-    {
-        Text = string.Empty;
-    }
-
-    public ICommand OpenFileCommand => field ??=
-        new LambdaCommand(OnOpenFileCommandExecuted);
-    private void OnOpenFileCommandExecuted(object? p)
-    {
-        var dialog = new OpenFileDialog();
-        var result = dialog.ShowDialog();
-        if (result == true) 
-        {
-            if (File.Exists(dialog.FileName)) 
-            {
-                var text = File.ReadAllText(dialog.FileName);
-                Text = text;
-            }
-        }
-    }
-
-    public ICommand SaveFileCommand => field ??=
-    new LambdaCommand(OnSaveFileCommandExecuted);
-    private void OnSaveFileCommandExecuted(object? p)
-    {
-        var dialog = new SaveFileDialog();
-        var result = dialog.ShowDialog();
-        if (result == true)
-        {
-            var text = Text;
-            File.WriteAllText(dialog.FileName, text);
-        }
-    }
+    } = "Опытно-экспериментальное приложение";
 
     /// <summary>
     /// Закрыть приложение

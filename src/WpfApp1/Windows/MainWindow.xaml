@@ -11,12 +11,6 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Меню">
-                <MenuItem Header="Новый файл" Cursor="Hand"
-                          Command="{Binding NewFileCommand}"/>
-                <MenuItem Header="Открыть файл" Cursor="Hand"
-                          Command="{Binding OpenFileCommand}"/>
-                <MenuItem Header="Сохранить файл" Cursor="Hand"
-                          Command="{Binding SaveFileCommand}"/>
                 <Separator/>
                 <MenuItem Header="Выход" Cursor="Hand"
                           Command="{Binding CloseAppCommand}"/>
@@ -35,7 +29,7 @@
             </StatusBarItem>
         </StatusBar>
         <Grid Margin="4">
-            <TextBox Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"/>
+            
         </Grid>
     </DockPanel>
 </Window>
