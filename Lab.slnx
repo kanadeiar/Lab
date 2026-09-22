@@ -8,6 +8,7 @@
     <Project Path="tests/WpfApp1Tests/WpfApp1Tests.csproj" Id="38423d3e-bc3d-4daa-89ec-3889febe1f9a" />
   </Folder>
   <Folder Name="/Элементы решения/">
+    <File Path=".clinerules/standarts.md" />
     <File Path="README.md" />
   </Folder>
 </Solution>

@@ -5,14 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Height="400" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip"
+        Height="500"
+        Width="800"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResizeWithGrip"
         DataContext="{Binding MainWindowViewModel, Source={StaticResource Locator}}"
         Title="{Binding Title}">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="Меню">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Новый"
+                          Cursor="Hand"
+                          Command="{Binding NewFileCommand}"/>
+                <MenuItem Header="Открыть..."
+                          Cursor="Hand"
+                          Command="{Binding OpenFileCommand}"/>
                 <Separator/>
-                <MenuItem Header="Выход" Cursor="Hand"
+                <MenuItem Header="Сохранить"
+                          Cursor="Hand"
+                          Command="{Binding SaveFileCommand}"/>
+                <MenuItem Header="Сохранить как..."
+                          Cursor="Hand"
+                          Command="{Binding SaveAsFileCommand}"/>
+                <Separator/>
+                <MenuItem Header="Выход"
+                          Cursor="Hand"
                           Command="{Binding CloseAppCommand}"/>
             </MenuItem>
             <MenuItem Header="Справка">
@@ -23,18 +40,21 @@
         <StatusBar DockPanel.Dock="Bottom">
             <StatusBarItem>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Статус проиложения: "/>
-                    <TextBlock Text="Норма" FontWeight="Bold"/>
+                    <TextBlock Text="Статус приложения: "/>
+                    <TextBlock Text="Норма"
+                               FontWeight="Bold"/>
                 </StackPanel>
             </StatusBarItem>
         </StatusBar>
         <Grid Margin="4">
-            <StackPanel>
-                <TextBlock Text="Имя:"/>
-                <TextBox Text="{Binding Name}"/>
-                <Button
-                    Command="{Binding HelloCommand}">Привет</Button>
-            </StackPanel>
+            <TextBox Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"
+                     AcceptsReturn="True"
+                     AcceptsTab="True"
+                     FontFamily="Consolas"
+                     FontSize="13"
+                     VerticalScrollBarVisibility="Auto"
+                     HorizontalScrollBarVisibility="Auto"
+                     SpellCheck.IsEnabled="True"/>
         </Grid>
     </DockPanel>
 </Window>
