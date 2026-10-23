@@ -17,7 +17,7 @@ public class MainWindowViewModel : Base.ViewModelBase
     {
         get => field;
         set => Set(ref field, value);
-    } = "Опытно-экспериментальное приложение";
+    } = "Опытно-экспериментальный блокнот";
 
     /// <summary>
     /// Текст содержимого редактируемого файла
