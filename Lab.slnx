@@ -1,6 +1,10 @@
 <Solution>
-  <Folder Name="/src/" />
-  <Folder Name="/tests/" />
+  <Folder Name="/src/">
+    <Project Path="src/ConsoleApp1/ConsoleApp1.csproj" Id="7e7190ba-3358-4b35-913b-d378fd566f89" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ConsoleApp1Tests/ConsoleApp1Tests.csproj" Id="08b57047-df86-4fb4-8c37-b4f3e39c6b3d" />
+  </Folder>
   <Folder Name="/Элементы решения/">
     <File Path=".clinerules/standarts.md" />
     <File Path="README.md" />
