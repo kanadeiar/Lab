@@ -1,9 +1,11 @@
 <Solution>
   <Folder Name="/src/">
     <Project Path="src/ConsoleApp1/ConsoleApp1.csproj" Id="7e7190ba-3358-4b35-913b-d378fd566f89" />
+    <Project Path="src/WpfApp1/WpfApp1.csproj" Id="b2922d53-427b-490d-ae9e-21667c015030" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/ConsoleApp1Tests/ConsoleApp1Tests.csproj" Id="08b57047-df86-4fb4-8c37-b4f3e39c6b3d" />
+    <Project Path="tests/WpfApp1Tests/WpfApp1Tests.csproj" Id="8312bacd-85cb-4147-b6d1-d793071ed989" />
   </Folder>
   <Folder Name="/Элементы решения/">
     <File Path=".clinerules/standarts.md" />

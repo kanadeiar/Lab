@@ -1,4 +1,4 @@
-﻿using AutoFixture.Xunit2;
+﻿using AutoFixture.Xunit3;
 using Kanadeiar.Common.Tests;
 
 namespace Kanadeiar.Common.Tests;
